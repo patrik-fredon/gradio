@@ -20,7 +20,7 @@
 		"@gradio/wasm": "workspace:^",
 		"@types/dompurify": "^3.0.2",
 		"@types/katex": "^0.16.0",
-		"@types/prismjs": "1.26.4",
+		"@types/prismjs": "1.26.5",
 		"dequal": "^2.0.2"
 	},
 	"devDependencies": {
