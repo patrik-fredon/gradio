@@ -41,7 +41,7 @@
 		"@gradio/client": "workspace:^",
 		"@manypkg/get-packages": "^2.2.1",
 		"@playwright/experimental-ct-svelte": "^1.44.1",
-		"@playwright/test": "^1.44.1",
+		"@playwright/test": "^1.56.0",
 		"@self/build": "workspace:^",
 		"@self/tootils": "workspace:^",
 		"@sveltejs/package": "^2.3.4",
