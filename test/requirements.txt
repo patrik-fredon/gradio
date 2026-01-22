@@ -6,7 +6,7 @@
 #
 aiofiles==23.2.1
     # via gradio
-altair>=5.0
+altair==5.3.0
     # via
     #   -r requirements.in
     #   gradio
@@ -16,14 +16,12 @@ anyio==3.6.1
     # via
     #   httpcore
     #   starlette
-appnope==0.1.4
-    # via ipython
+asttokens==3.0.1
+    # via stack-data
 asyncio==3.4.3
     # via -r requirements.in
 attrs==23.1.0
-    # via
-    #   jsonschema
-    #   pytest
+    # via jsonschema
 backcall==0.2.0
     # via ipython
 boto3==1.34.84
@@ -32,7 +30,7 @@ botocore==1.34.84
     # via
     #   boto3
     #   s3transfer
-certifi==2022.6.15
+certifi==2024.7.4
     # via
     #   httpcore
     #   httpx
@@ -61,8 +59,10 @@ dnspython==2.6.1
     # via email-validator
 email-validator==2.1.0.post1
     # via pydantic
-entrypoints==0.4
-    # via altair
+exceptiongroup==1.3.1
+    # via pytest
+executing==2.2.1
+    # via stack-data
 fastapi==0.103.0
     # via
     #   -r requirements.in
@@ -75,21 +75,26 @@ filelock==3.7.1
     #   huggingface-hub
     #   torch
     #   transformers
-fonttools==4.49.0
+    #   triton
+fonttools==4.60.2
     # via matplotlib
 fsspec==2024.2.0
     # via
     #   gradio-client
     #   huggingface-hub
     #   torch
+gradio==4.19.1
+    # via gradio-pdf
 gradio-client==0.10.0
     # via gradio
-gradio-pdf==0.0.7
+gradio-pdf==0.0.3
     # via -r requirements.in
 h11==0.12.0
     # via
     #   httpcore
     #   uvicorn
+hf-xet==1.2.0
+    # via huggingface-hub
 httpcore==0.15.0
     # via httpx
 httpx==0.23.0
@@ -98,8 +103,15 @@ httpx==0.23.0
     #   gradio
     #   gradio-client
     #   respx
-hypothesis==6.108.9
-idna==3.3
+huggingface-hub==0.36.0
+    # via
+    #   -r requirements.in
+    #   diffusers
+    #   gradio
+    #   gradio-client
+    #   tokenizers
+    #   transformers
+idna==3.7
     # via
     #   anyio
     #   email-validator
@@ -115,11 +127,11 @@ importlib-resources==6.1.1
     #   matplotlib
 iniconfig==1.1.1
     # via pytest
-ipython==7.34.0
+ipython==8.10.0
     # via -r requirements.in
 jedi==0.18.1
     # via ipython
-jinja2==3.1.2
+jinja2==3.1.6
     # via
     #   altair
     #   gradio
@@ -164,15 +176,48 @@ numpy==1.24.4
     #   scipy
     #   tifffile
     #   transformers
-orjson==3.9.14
+nvidia-cublas-cu12==12.1.3.1
+    # via
+    #   nvidia-cudnn-cu12
+    #   nvidia-cusolver-cu12
+    #   torch
+nvidia-cuda-cupti-cu12==12.1.105
+    # via torch
+nvidia-cuda-nvrtc-cu12==12.1.105
+    # via torch
+nvidia-cuda-runtime-cu12==12.1.105
+    # via torch
+nvidia-cudnn-cu12==8.9.2.26
+    # via torch
+nvidia-cufft-cu12==11.0.2.54
+    # via torch
+nvidia-curand-cu12==10.3.2.106
+    # via torch
+nvidia-cusolver-cu12==11.4.5.107
+    # via torch
+nvidia-cusparse-cu12==12.1.0.106
+    # via
+    #   nvidia-cusolver-cu12
+    #   torch
+nvidia-nccl-cu12==2.18.1
+    # via torch
+nvidia-nvjitlink-cu12==12.9.86
+    # via
+    #   nvidia-cusolver-cu12
+    #   nvidia-cusparse-cu12
+nvidia-nvtx-cu12==12.1.105
+    # via torch
+orjson==3.11.5
     # via gradio
 packaging==22.0
     # via
+    #   altair
     #   gradio
     #   gradio-client
     #   huggingface-hub
     #   matplotlib
     #   pytest
+    #   pytest-rerunfailures
     #   scikit-image
     #   transformers
 pandas==1.5.3
@@ -186,7 +231,7 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pillow==9.2.0
+pillow==10.3.0
     # via
     #   diffusers
     #   gradio
@@ -201,8 +246,8 @@ prompt-toolkit==3.0.30
     # via ipython
 ptyprocess==0.7.0
     # via pexpect
-py==1.11.0
-    # via pytest
+pure-eval==0.2.3
+    # via stack-data
 pydantic[email]==2.6.1
     # via
     #   -r requirements.in
@@ -225,6 +270,7 @@ pytest==8.3.2
     #   -r requirements.in
     #   pytest-asyncio
     #   pytest-cov
+    #   pytest-rerunfailures
 pytest-asyncio==0.19.0
     # via -r requirements.in
 pytest-cov==3.0.0
@@ -236,7 +282,7 @@ python-dateutil==2.8.2
     #   botocore
     #   matplotlib
     #   pandas
-python-multipart==0.0.9
+python-multipart==0.0.18
     # via gradio
 pytz==2022.1
     # via pandas
@@ -251,7 +297,7 @@ regex==2022.7.9
     # via
     #   diffusers
     #   transformers
-requests==2.28.1
+requests==2.32.4
     # via
     #   diffusers
     #   huggingface-hub
@@ -259,9 +305,7 @@ requests==2.28.1
 respx==0.19.2
     # via -r requirements.in
 rfc3986[idna2008]==1.5.0
-    # via
-    #   httpx
-    #   rfc3986
+    # via httpx
 rich==13.7.0
     # via typer
 ruff==0.4.1
@@ -270,7 +314,7 @@ ruff==0.4.1
     #   gradio
 s3transfer==0.10.0
     # via boto3
-safetensors==0.4.2
+safetensors==0.7.0
     # via
     #   diffusers
     #   transformers
@@ -289,13 +333,15 @@ sniffio==1.2.0
     #   anyio
     #   httpcore
     #   httpx
+stack-data==0.6.3
+    # via ipython
 starlette==0.27.0
     # via fastapi
 sympy==1.12
     # via torch
 tifffile==2021.11.2
     # via scikit-image
-tokenizers==0.15.1
+tokenizers==0.21.4
     # via transformers
 tomli==2.0.1
     # via
@@ -307,7 +353,7 @@ toolz==0.12.0
     # via altair
 torch==2.1.2
     # via -r requirements.in
-tqdm==4.64.0
+tqdm==4.66.3
     # via
     #   -r requirements.in
     #   huggingface-hub
@@ -316,14 +362,16 @@ traitlets==5.3.0
     # via
     #   ipython
     #   matplotlib-inline
-transformers==4.37.2
+transformers==4.53.0
     # via -r requirements.in
+triton==2.1.0
+    # via torch
 typer[all]==0.9.0
-    # via
-    #   gradio
-    #   typer
+    # via gradio
 typing-extensions==4.9.0
     # via
+    #   altair
+    #   exceptiongroup
     #   fastapi
     #   gradio
     #   gradio-client
@@ -346,10 +394,7 @@ wcwidth==0.2.5
     # via prompt-toolkit
 websockets==11.0.3
     # via gradio-client
-zipp==3.17.0
+zipp==3.19.1
     # via
     #   importlib-metadata
     #   importlib-resources
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
